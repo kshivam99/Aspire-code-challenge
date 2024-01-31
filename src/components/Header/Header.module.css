@@ -1,0 +1,27 @@
+
+.balanceHeader{
+    font-size: 19px;
+    color: #fff;
+}
+
+.balanceAmount {
+    color:#fff;
+    font-size: 32px;
+}
+
+.balanceTag {
+    background-color: #01D167;
+    color:#fff;
+    font-size: 16px;
+    height: 29px;
+    width: 53px;
+    border-radius: 5px;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logoContainer {
+    margin-right: 20px;
+}
