@@ -1,0 +1,20 @@
+
+.container {
+    width: 358px;
+    height: 220px;
+    background-color: #01D167;
+    border-radius: 12px;
+    position: relative;
+    margin-top: 30px;
+}
+
+.badge {
+    position: absolute;
+    background-color: #FFFFFF;
+    width: 151px;
+    height: 40px;
+    border-radius: 6px 6px 0px 0px;
+    top: -30px;
+    right: 0;
+    z-index: -1;
+}

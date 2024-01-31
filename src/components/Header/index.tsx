@@ -10,7 +10,7 @@ interface HeaderProps {
 
 function Header({ balance }: HeaderProps): JSX.Element {
   return (
-    <Flex className={styles.container} style={{ background: "#0C365A" }}>
+    <Flex className={styles.container}>
       <Flex direction={"column"}>
         <Text className={styles.balanceHeader} fw={500} c="white" style={{marginTop: 20}}>
           Account Balance
@@ -18,7 +18,7 @@ function Header({ balance }: HeaderProps): JSX.Element {
         <Flex direction={"column"}>
           <Flex align="center" gap="xs">
             <Center className={styles.balanceTag}>
-              <Text>S$</Text>
+              <Text fw={500}>S$</Text>
             </Center>
             <Text className={styles.balanceAmount} fw={700} c="white">
               {balance}
