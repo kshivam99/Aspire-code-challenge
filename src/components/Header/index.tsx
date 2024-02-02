@@ -42,16 +42,20 @@ function Header({ balance }: HeaderProps): JSX.Element {
         <Text
           className={styles.balanceHeader}
           fw={500}
-          c="white"
+          c={isMobile ? "white" : "#222222"}
           style={{ marginTop: 20 }}
         >
-          Account Balance
+          {isMobile ? "Account" : "Available"} Balance
         </Text>
         <Flex align="center" gap="xs">
           <Center className={styles.balanceTag}>
             <Text fw={500}>S$</Text>
           </Center>
-          <Text className={styles.balanceAmount} fw={700} c="white">
+          <Text
+            className={styles.balanceAmount}
+            fw={700}
+            c={isMobile ? "white" : "#222222"}
+          >
             {balance}
           </Text>
         </Flex>
@@ -62,11 +66,12 @@ function Header({ balance }: HeaderProps): JSX.Element {
         justify={"space-between"}
         style={{ marginRight: -12 }}
       >
-        {isMobile && (
-          <Box className={styles.logoContainer}>
-            <Image src={Logo} h={33} w={33} />
-          </Box>
-        )}
+        <Box
+          className={styles.logoContainer}
+          style={{ visibility: isMobile ? "visible" : "hidden" }}
+        >
+          <Image src={Logo} h={33} w={33} />
+        </Box>
         <Button
           variant={isMobile ? "transparent" : "filled"}
           size={"md"}

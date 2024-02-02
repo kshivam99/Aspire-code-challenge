@@ -69,7 +69,7 @@ function Dashboard(): JSX.Element {
   };
 
   return (
-    <Box style={{ background: isMobile ? '#0c365a': '#fff', flex: 1}}>
+    <Box style={{ background: isMobile ? "#0c365a" : "#fff", flex: 1, padding: isMobile ? 0 : 24 }}>
       <Box className={classes.header}>
         <Box p={24}>
           <Header balance={visibleCard.balance} />
