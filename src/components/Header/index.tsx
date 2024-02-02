@@ -8,11 +8,13 @@ import {
   Box,
   Modal,
   Input,
+  em,
 } from "@mantine/core";
 import styles from "./Header.module.css";
 import AddIcon from "../../assets/add.svg";
+import AddWhiteIcon from "../../assets/add-white.svg";
 import Logo from "../../assets/logo.svg";
-import { useDisclosure } from "@mantine/hooks";
+import { useDisclosure, useMediaQuery } from "@mantine/hooks";
 import { useCardContext } from "../../context/CardContext";
 
 interface HeaderProps {
@@ -20,6 +22,7 @@ interface HeaderProps {
 }
 
 function Header({ balance }: HeaderProps): JSX.Element {
+  const isMobile = useMediaQuery(`(max-width: ${em(740)})`);
   const [opened, { open, close }] = useDisclosure(false);
   const { dispatch } = useCardContext();
   const [cardName, setCardName] = useState("");
@@ -59,17 +62,19 @@ function Header({ balance }: HeaderProps): JSX.Element {
         justify={"space-between"}
         style={{ marginRight: -12 }}
       >
-        <Box className={styles.logoContainer}>
-          <Image src={Logo} h={33} w={33} />
-        </Box>
+        {isMobile && (
+          <Box className={styles.logoContainer}>
+            <Image src={Logo} h={33} w={33} />
+          </Box>
+        )}
         <Button
-          variant="transparent"
+          variant={isMobile ? "transparent" : "filled"}
           size={"md"}
-          color="#23CEFD"
+          color={isMobile ? "#23CEFD" : "#325BAF"}
           onClick={open}
         >
           <Image
-            src={AddIcon}
+            src={isMobile ? AddIcon : AddWhiteIcon}
             h={16}
             w={16}
             style={{ marginRight: 8, marginTop: 3 }}

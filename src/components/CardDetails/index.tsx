@@ -142,7 +142,7 @@ function CardDetails() {
             </Flex>
           </Flex>
         </Flex>
-        <Center style={{ background: "#EDFFF5", height: 90 }}>
+        <Center className={classes.footer}>
           <Text c={"#01D167"} fw={500}>
             View all card transactions
           </Text>

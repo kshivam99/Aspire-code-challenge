@@ -10,7 +10,7 @@ import Logo from "../../assets/navbar-logo.svg";
 import { useMediaQuery } from "@mantine/hooks";
 
 interface NavbarLinkProps {
-  icon: any;
+  icon: JSX.Element;
   label: string;
 }
 
