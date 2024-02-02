@@ -16,18 +16,22 @@ import { CardType, useCardContext } from "../../context/CardContext";
 import { useDisclosure } from "@mantine/hooks";
 
 function Dashboard(): JSX.Element {
-  const [visibleCard, setVisibleCard] = useState({ id: "", frozen: false });
+  const [visibleCard, setVisibleCard] = useState({
+    id: "",
+    frozen: false,
+    balance: 0,
+  });
   const [opened, { open, close }] = useDisclosure(false);
   const { state, dispatch } = useCardContext();
   const cards = state.cards;
 
   const handleSetVisibleCard = (index: number, cards: CardType[]) => {
     if (!cards.length) return;
-    const id = cards[index].id;
-    const frozen = cards[index].frozen;
+    const { id, frozen, balance } = cards[index];
     setVisibleCard({
       id,
       frozen,
+      balance,
     });
     dispatch({ type: "SET_VISIBLE_CARD", payload: id });
   };
@@ -53,10 +57,11 @@ function Dashboard(): JSX.Element {
       setVisibleCard({
         id: remainingCards[0].id,
         frozen: remainingCards[0].frozen,
+        balance: remainingCards[0].balance,
       });
       dispatch({ type: "SET_VISIBLE_CARD", payload: remainingCards[0].id });
     } else {
-      setVisibleCard({ id: "", frozen: false });
+      setVisibleCard({ id: "", frozen: false, balance: 0 });
       dispatch({ type: "SET_VISIBLE_CARD", payload: null });
     }
     close();
@@ -66,7 +71,7 @@ function Dashboard(): JSX.Element {
     <Box className={classes.wrapper}>
       <Box className={classes.header}>
         <Box p={24}>
-          <Header balance={3000} />
+          <Header balance={visibleCard.balance} />
           <Tabs />
         </Box>
         <Box mt={30} ml={24}>
