@@ -93,7 +93,7 @@ export function Navbar() {
         justify={isMobile ? "space-around" : "center"}
         align="flex-start"
         className="menu"
-        gap={isMobile ? "40px" : "60px"}
+        gap={isMobile ? "40px" : "4vh"}
       >
         {links}
       </Flex>

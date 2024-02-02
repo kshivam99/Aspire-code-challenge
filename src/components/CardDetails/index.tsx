@@ -38,7 +38,7 @@ function CardDetails() {
           <Image src={UpArrow} h={20} w={20} />
         </Flex>
         <Flex direction={"column"} className={classes.accordionBody}>
-          <Flex align="flex-start" gap="16px" className={classes.contentRow}>
+          <Flex align="flex-start" justify={'space-between'} gap="16px" className={classes.contentRow}>
             <Center
               style={{
                 background: "#009DFF1A",
@@ -64,7 +64,7 @@ function CardDetails() {
             </Flex>
           </Flex>
           <Divider my="md" />
-          <Flex align="flex-start" gap="16px" className={classes.contentRow}>
+          <Flex align="flex-start" justify={'space-between'} gap="16px" className={classes.contentRow}>
             <Center
               style={{
                 background: "#009DFF1A",
@@ -90,7 +90,7 @@ function CardDetails() {
             </Flex>
           </Flex>
           <Divider my="md" />
-          <Flex align="flex-start" gap="16px" className={classes.contentRow}>
+          <Flex align="flex-start" justify={'space-between'} gap="16px" className={classes.contentRow}>
             <Center
               style={{
                 background: "#009DFF1A",
@@ -116,7 +116,7 @@ function CardDetails() {
             </Flex>
           </Flex>
           <Divider my="md" />
-          <Flex align="flex-start" gap="16px" className={classes.contentRow}>
+          <Flex align="flex-start" justify={'space-between'} gap="16px" className={classes.contentRow}>
             <Center
               style={{
                 background: "#009DFF1A",
