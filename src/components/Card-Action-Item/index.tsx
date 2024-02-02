@@ -5,9 +5,10 @@ import styles from "./CardAction.module.css";
 interface CardActionProps {
   children: JSX.Element;
   tag: string;
+  clickHandle?: () => void;
 }
 
-function CardAction({ children, tag }: CardActionProps) {
+function CardAction({ children, tag, clickHandle }: CardActionProps) {
   return (
     <Flex
       justify="flex-start"
@@ -15,10 +16,11 @@ function CardAction({ children, tag }: CardActionProps) {
       align="center"
       direction="column"
       className={styles.container}
+      onClick={clickHandle}
     >
       <Box>{children}</Box>
       <Box className={styles.tag}>
-        <Text size={"12px"} c="#0C365A" >
+        <Text size={"12px"} c="#0C365A">
           {tag}
         </Text>
       </Box>

@@ -1,11 +1,19 @@
-import React from "react";
-import { Button, Center, Flex, Text, Image, Box, Modal, Input } from "@mantine/core";
+import React, { useState } from "react";
+import {
+  Button,
+  Center,
+  Flex,
+  Text,
+  Image,
+  Box,
+  Modal,
+  Input,
+} from "@mantine/core";
 import styles from "./Header.module.css";
 import AddIcon from "../../assets/add.svg";
 import Logo from "../../assets/logo.svg";
 import { useDisclosure } from "@mantine/hooks";
-import { IMaskInput } from 'react-imask';
-
+import { useCardContext } from "../../context/CardContext";
 
 interface HeaderProps {
   balance: number;
@@ -13,6 +21,17 @@ interface HeaderProps {
 
 function Header({ balance }: HeaderProps): JSX.Element {
   const [opened, { open, close }] = useDisclosure(false);
+  const { dispatch } = useCardContext();
+  const [cardName, setCardName] = useState("");
+
+  const handleAddNewCard = () => {
+    dispatch({ type: "ADD_CARD", payload: cardName });
+    close();
+  };
+
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCardName(e.target.value);
+  };
 
   return (
     <Flex className={styles.container}>
@@ -25,7 +44,6 @@ function Header({ balance }: HeaderProps): JSX.Element {
         >
           Account Balance
         </Text>
-
         <Flex align="center" gap="xs">
           <Center className={styles.balanceTag}>
             <Text fw={500}>S$</Text>
@@ -44,7 +62,6 @@ function Header({ balance }: HeaderProps): JSX.Element {
         <Box className={styles.logoContainer}>
           <Image src={Logo} h={33} w={33} />
         </Box>
-
         <Button
           variant="transparent"
           size={"md"}
@@ -67,13 +84,23 @@ function Header({ balance }: HeaderProps): JSX.Element {
         size="xl"
         centered
       >
-        <Flex style={{minHeight: 150}} direction='column' justify={'space-between'}>
-        <Flex mt={20}>
-        <Input component={IMaskInput} mask="0000 0000 0000 0000" placeholder="Enter Card Number" style={{flex: 1}} />
+        <Flex
+          style={{ minHeight: 150 }}
+          direction="column"
+          justify={"space-between"}
+        >
+          <Flex mt={20}>
+            <Input
+              placeholder="Enter Card Name"
+              style={{ flex: 1 }}
+              onChange={handleNameChange}
+              maxLength={20}
+            />
+          </Flex>
+          <Button color={"#01D167"} onClick={handleAddNewCard}>
+            Add New Card
+          </Button>
         </Flex>
-        <Button color={'#01D167'}>
-          Add New Card
-        </Button></Flex>
       </Modal>
     </Flex>
   );

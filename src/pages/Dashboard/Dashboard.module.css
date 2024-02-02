@@ -8,10 +8,13 @@
   background-color: #01d167;
 }
 
-.container {
+.wrapper {
   background-color: #0c365a;
 }
 
+.container {
+  border: none;
+}
 .header {
   position: sticky;
   top: 0;
