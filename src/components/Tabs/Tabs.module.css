@@ -1,0 +1,10 @@
+.active {
+  border-bottom: 2px solid #23cefd;
+  color: #fff;
+  padding-bottom: 8px;
+}
+
+.inActive {
+    color: #fff;
+    opacity: 0.5;
+}

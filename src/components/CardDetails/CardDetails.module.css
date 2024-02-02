@@ -1,0 +1,20 @@
+
+.accordionHeader {
+    border-radius: 8px;
+    padding: 24px;
+    height: 72px;
+    background-color: #F5F9FF;
+    border: 1px solid #F5F5F5;
+    filter: drop-shadow(0px 0px 8px #0000000A);
+}
+
+.accordionBody {
+    padding: 24px;
+    border: 1px solid #F0F0F0;
+    border-radius: 8px; 
+}
+
+.contentRow {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}

@@ -1,10 +1,12 @@
-import React from 'react';
-import Card from './components/Card/Card';
-import Dashboard from './pages/Dashboard';
+import React from "react";
+import { Box } from "@mantine/core";
+import Dashboard from "./pages/Dashboard";
 
 function App(): JSX.Element {
   return (
-    <Dashboard />
+    <Box>
+      <Dashboard />
+    </Box>
   );
 }
 

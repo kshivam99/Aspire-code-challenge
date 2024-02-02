@@ -1,0 +1,32 @@
+.indicator {
+  width: 8px !important;
+  height: 8px !important;
+  transition: width 250ms ease;
+}
+.indicator[data-active] {
+  width: 16px !important;
+  background-color: #01d167;
+}
+
+.container {
+  background-color: #0c365a;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+}
+
+.sliderHead {
+  height: 116px;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+  background: #edf3ff;
+  position: relative;
+}
+
+.sliderBody {
+  background: #fff;
+  position: relative;
+  padding: 24px;
+}
