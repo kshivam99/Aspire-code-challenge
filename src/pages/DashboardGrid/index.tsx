@@ -78,7 +78,7 @@ function DashboardGrid(): JSX.Element {
               <Tabs />
             </Box>
           </Box>
-          <Flex gap={"60px"} className={classes.content}>
+          <Flex gap={"60px"} className={classes.dashContent}>
             <Flex direction={"column"} className={classes.row1}>
               <Carousel
                 classNames={classes}
