@@ -68,7 +68,6 @@ function Header({ balance }: HeaderProps): JSX.Element {
       >
         <Box
           className={styles.logoContainer}
-          style={{ visibility: isMobile ? "visible" : "hidden" }}
         >
           <Image src={Logo} h={33} w={33} />
         </Box>
@@ -82,7 +81,7 @@ function Header({ balance }: HeaderProps): JSX.Element {
             src={isMobile ? AddIcon : AddWhiteIcon}
             h={16}
             w={16}
-            style={{ marginRight: 8, marginTop: 3 }}
+            style={{ marginRight: 8 , marginTop: 1}}
           />
           New card
         </Button>

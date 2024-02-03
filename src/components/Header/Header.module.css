@@ -24,4 +24,12 @@
 
 .logoContainer {
     margin-right: 20px;
+    visibility: hidden;
+}
+
+@media only screen and (max-width: 1059px) {
+
+    .logoContainer{
+        visibility: visible;
+    }
 }
