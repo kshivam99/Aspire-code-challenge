@@ -15,7 +15,7 @@ interface NavbarLinkProps {
 }
 
 function NavbarLink({ icon, label }: NavbarLinkProps) {
-  const isMobile = useMediaQuery(`(max-width: ${em(740)})`);
+  const isMobile = useMediaQuery(`(max-width: ${em(1059)})`);
   const isCardLabel = label === "Cards";
   return (
     <Flex direction={"column"} align="center">
@@ -46,7 +46,7 @@ function NavbarLink({ icon, label }: NavbarLinkProps) {
 }
 
 export function Navbar() {
-  const isMobile = useMediaQuery(`(max-width: ${em(740)})`);
+  const isMobile = useMediaQuery(`(max-width: ${em(1059)})`);
   const navbarData = [
     { icon: Home, label: "Home" },
     { icon: Pay, label: "Cards" },

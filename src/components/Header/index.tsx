@@ -22,7 +22,7 @@ interface HeaderProps {
 }
 
 function Header({ balance }: HeaderProps): JSX.Element {
-  const isMobile = useMediaQuery(`(max-width: ${em(740)})`);
+  const isMobile = useMediaQuery(`(max-width: ${em(1059)})`);
   const [opened, { open, close }] = useDisclosure(false);
   const { dispatch } = useCardContext();
   const [cardName, setCardName] = useState("");
@@ -91,7 +91,7 @@ function Header({ balance }: HeaderProps): JSX.Element {
         opened={opened}
         onClose={close}
         title="Add new card"
-        size="xl"
+        size={isMobile ?"xl": "md"}
         centered
       >
         <Flex

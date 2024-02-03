@@ -1,0 +1,36 @@
+.indicator {
+  width: 8px !important;
+  height: 8px !important;
+  transition: width 250ms ease;
+}
+.indicator[data-active] {
+  width: 16px !important;
+  background-color: #01d167;
+}
+
+.container {
+  border: none;
+}
+.header {
+  margin-bottom: 30px;
+}
+
+.content {
+  padding-left: 40px;
+}
+
+.row1 {
+  width: 348px;
+}
+
+.row2 {
+  width: 50%;
+  padding-top: 30px;
+}
+
+.wrapper {
+  flex: 1;
+  padding-left: 60px;
+  padding-top: 40px;
+  padding-right: 60px;
+}

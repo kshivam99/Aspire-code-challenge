@@ -16,6 +16,9 @@
   top: 0;
 }
 
+.wrapper {
+  background-color: #0c365a;
+}
 .sliderHead {
   height: 116px;
   border-top-right-radius: 30px;

@@ -27,7 +27,7 @@
     cursor: pointer;
 }
 
-@media only screen and (max-width: 740px) {
+@media only screen and (max-width: 1059px) {
 
     .wrapper{
         width: 85vw;

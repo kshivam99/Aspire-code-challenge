@@ -3,7 +3,7 @@ import { Carousel } from "@mantine/carousel";
 import Card from "../../components/Card";
 import Header from "../../components/Header";
 import classes from "./Dashboard.module.css";
-import { Box, Button, Flex, Image, Text, Modal, em } from "@mantine/core";
+import { Box, Button, Flex, Image, Text, Modal } from "@mantine/core";
 import CardAction from "../../components/Card-Action-Item";
 import Freeze from "../../assets/freeze.svg";
 import Meter from "../../assets/meter.svg";
@@ -13,7 +13,7 @@ import Bin from "../../assets/bin.svg";
 import CardDetails from "../../components/CardDetails";
 import Tabs from "../../components/Tabs";
 import { CardType, useCardContext } from "../../context/CardContext";
-import { useDisclosure, useMediaQuery } from "@mantine/hooks";
+import { useDisclosure } from "@mantine/hooks";
 
 function Dashboard(): JSX.Element {
   const [visibleCard, setVisibleCard] = useState({
@@ -21,7 +21,6 @@ function Dashboard(): JSX.Element {
     frozen: false,
     balance: 0,
   });
-  const isMobile = useMediaQuery(`(max-width: ${em(740)})`);
   const [opened, { open, close }] = useDisclosure(false);
   const { state, dispatch } = useCardContext();
   const cards = state.cards;
@@ -69,7 +68,7 @@ function Dashboard(): JSX.Element {
   };
 
   return (
-    <Box style={{ background: isMobile ? "#0c365a" : "#fff", flex: 1, padding: isMobile ? 0 : 24 }}>
+    <Box className={classes.wrapper}>
       <Box className={classes.header}>
         <Box p={24}>
           <Header balance={visibleCard.balance} />

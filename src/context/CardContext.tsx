@@ -78,7 +78,7 @@ const cardReducer = (state: State, action: Action): State => {
       const randomYear = currentYear + Math.floor(Math.random() * 10);
       const randomMonth = Math.floor(Math.random() * 12) + 1;
       const randomExpiry = `${randomMonth}/${randomYear.toString().slice(-2)}`;
-
+      const randomBalance = Math.floor(Math.random()*10000);
       const newCard: CardType = {
         id: Math.random().toString(36).substr(2, 9),
         number: randomNumberArray,
@@ -86,7 +86,7 @@ const cardReducer = (state: State, action: Action): State => {
         cvv: randomCVV,
         expiry: randomExpiry,
         name: action.payload,
-        balance: 0,
+        balance: randomBalance,
       };
 
       return {
