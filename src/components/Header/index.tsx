@@ -91,7 +91,7 @@ function Header({ balance }: HeaderProps): JSX.Element {
         opened={opened}
         onClose={close}
         title="Add new card"
-        size={isMobile ?"xl": "md"}
+        size={isMobile ? "xl" : "md"}
         centered
       >
         <Flex
